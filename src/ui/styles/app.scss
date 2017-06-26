@@ -1,3 +1,57 @@
-h1 {
-  color: #444;
+body {
+  background: url('b.svg');
+  background-repeat: no-repeat;
+  background-color: #FAF4F1;
+  background-size: cover;
+}
+
+.d2h-file-wrapper {
+  background: white;
+}
+
+#form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 150px;
+  text-align: center;
+}
+
+#diff {
+  max-width: 750px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left: auto;
+  margin-right: auto;
+
+  text-align: center;
+  font-family: sans-serif;
+}
+
+select {
+  width: 200px;
+}
+
+.select2, .select2-results__option {
+  font-family: sans-serif;
+}
+
+#submit {
+  background: #FF5334;
+  border-radius: 8px;
+  border: none;
+
+  font-family: sans-serif;
+  color: #FFFFFF;
+  letter-spacing: 2px;
+  line-height: 23px;
+  font-size: 15px;
+}
+
+#explain {
+  font-family: sans-serif;
+  font-size: 16px;
+  color: #505050;
+  letter-spacing: 0;
+  line-height: 20px;
 }
