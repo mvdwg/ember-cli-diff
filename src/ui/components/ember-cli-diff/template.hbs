@@ -1,15 +1,15 @@
 <div id="form-container">
   <img width=50 height=50 src="tomster.svg">
   <form>
-    <select id="from" data-placeholder="From" onchange={{action loadFrom}}>
+    <select id="from" data-placeholder="From" onchange={{action loadVersion 'from'}}>
       <option></option>
     </select>
 
-    <select id="to" data-placeholder="To" onchange={{action loadTo}}>
+    <select id="to" data-placeholder="To" onchange={{action loadVersion 'to'}}>
       <option></option>
     </select>
 
-    <button id="submit" onclick={{action loadDiff}}> See changes </button>
+    <button id="submit" onclick={{action load}}> See changes </button>
 
   </form>
   <p id="explain">
@@ -17,5 +17,4 @@
   </p>
 </div>
 
-<div id="diff">
-</div>
+<div id="diff"></div>
