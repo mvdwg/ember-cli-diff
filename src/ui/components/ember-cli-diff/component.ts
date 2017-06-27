@@ -49,6 +49,13 @@ export default class EmberCliDiff extends Component {
 
   loadVersion(key, e) {
     this[key] = e.target.value;
+
+    if (key === "from") {
+      let greaterThanFromVersion = this.json.slice(0, this.json.indexOf(this.from));
+      $("#to").empty().prepend('<option value="">').select2({
+        data: this.createHashForSelect2(greaterThanFromVersion)
+      })
+    }
   }
 
   load(e) {
