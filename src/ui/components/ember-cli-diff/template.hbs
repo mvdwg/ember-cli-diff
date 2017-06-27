@@ -1,0 +1,20 @@
+<div id="form-container">
+  <img width=50 height=50 src="tomster.svg">
+  <form>
+    <select id="from" data-placeholder="From" onchange={{action loadVersion 'from'}}>
+      <option></option>
+    </select>
+
+    <select id="to" data-placeholder="To" onchange={{action loadVersion 'to'}}>
+      <option></option>
+    </select>
+
+    <button id="submit" onclick={{action load}}> See changes </button>
+
+  </form>
+  <p id="explain">
+  See the changes between new ember apps
+  </p>
+</div>
+
+<div id="diff"></div>
