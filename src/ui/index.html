@@ -22,6 +22,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/diff2html/2.3.0/diff2html.min.js" integrity="sha256-mKHKp8FD7CitQVGdV8V9MHZAIss7XR5/0OVch/BjVZQ=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/diff2html/2.3.0/diff2html-ui.min.js" integrity="sha256-OrGLYrMJmpNSQzNeRnByAxVY3npgIT6Os98GW87iDrw=" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/diff2html/2.3.0/diff2html.min.css" integrity="sha256-HXXk7bgd2iz15UVkGyhtNXa9MRgnjYHdCwtQvLsE2Ck=" crossorigin="anonymous" />
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
@@ -32,9 +33,16 @@
     {{content-for "head-footer"}}
   </head>
   <body>
+    <header>
+      <div class="container">
+        <img class="logo" src="logo.svg" alt="logo">
+        <p>A simple tool to see differences between<br>ember cli versions</p>
+        <img class="tomster" src="tomster.svg" alt="Tomster">
+      </div>
+    </header>
     {{content-for "body"}}
 
-    <div id="app"></div>
+    <main id="app"></main>
     <script src="{{rootURL}}app.js"></script>
 
     {{content-for "body-footer"}}

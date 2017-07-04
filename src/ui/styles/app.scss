@@ -1,60 +1,155 @@
+$primary-color: #d8563a;
+$primary-color-light: lighten($primary-color, 20%);
+$light-color: #fff;
+$dark-color: #999;
+
+$text-light-color: #fff;
+$text-dark-color: #333;
+
+
 body {
-  background: url('b.svg');
-  background-repeat: no-repeat;
-  background-color: #FAF4F1;
+  background: #faf4f1 url('b.svg') no-repeat;
   background-size: cover;
+  padding: 0;
+  margin: 0;
+  color: $text-dark-color;
 }
 
-.d2h-file-wrapper {
-  background: white;
+.container {
+  margin: 0 auto;
+  width: 960px;
 }
 
-#form-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
+header {
+  width: 100%;
+  height: 220px;
+  background: $primary-color url('subway-lines.png') repeat;
+
+  .container {
+    height: 220px;
+    position: relative;
+  }
+
+  .logo {
+    margin-top: 20px;
+  }
+
+  p {
+    color: $text-light-color;
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
+    margin: 10px 0 0 0;
+    line-height: 1.4;
+    text-shadow: 0 1px 2px rgba(0,0,0,.1);
+  }
+
+  .tomster {
+    width: 136px;
+    height: 125px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
 }
 
-#diff {
-  max-width: 960px;
-  padding-left: 10px;
-  padding-right: 10px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 30px;
+main {
+  #form-container {
+    background-color: $light-color;
+    height: 70px;
+    border-bottom: solid 1px #DECCC9;
+  }
 
-  text-align: center;
-  font-family: sans-serif;
+  form {
+    display: flex;
+    align-items: center;
+    height: 70px;
+
+    button {
+      border: solid 1px $primary-color;
+      color: $primary-color;
+      background-color: $light-color;
+      height: 42px;
+      line-height: 42px;
+      padding: 0 22px;
+      background-color: #fff;
+      border-radius: 2px;
+      font-size: 19px;
+      font-family: 'Roboto', sans-serif;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $primary-color;
+        color: $text-light-color;
+      }
+    }
+  }
 }
 
 select {
   width: 200px;
 }
 
-.select2, .select2-results__option {
-  font-family: sans-serif;
+.select2-container {
+  margin-right: 10px;
+  font-family: 'Roboto', sans-serif;
 }
 
-#submit {
-  background: #FF5334;
-  border-radius: 8px;
-  border: none;
+.select2-container--default {
+  .select2-selection {
+    border-radius: 2px;
+    border-color: $dark-color;
+    height: auto;
 
-  font-family: sans-serif;
-  color: #FFFFFF;
-  letter-spacing: 2px;
-  line-height: 23px;
-  font-size: 15px;
-  cursor: pointer;
+    .select2-selection__rendered {
+      height: 40px;
+      line-height: 40px;
+      color: $text-dark-color;
+    }
+
+    .select2-selection__arrow {
+      top: 8px;
+    }
+  }
+
+  .select2-results__option[aria-selected=true] {
+    background-color: $primary-color!important;
+    color: $text-light-color;
+  }
+
+  .select2-results__option--highlighted[aria-selected] {
+    background-color: $primary-color-light;
+  }
+
+  .select2-dropdown {
+    border-radius: 2px;
+    border: solid 1px $dark-color;
+    border-top: 1px solid $light-color;
+
+    .select2-search--dropdown .select2-search__field {
+      outline-color: $primary-color;
+    }
+
+    li {
+      color: $text-dark-color;
+      font-family: 'Roboto', sans-serif;
+    }
+  }
 }
 
-#explain {
+.d2h-file-wrapper {
+  background: white;
+}
+
+#diff {
+  margin-top: 40px;
+  max-width: 960px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left: auto;
+  margin-right: auto;
+
+  text-align: center;
   font-family: sans-serif;
-  font-size: 16px;
-  color: #505050;
-  letter-spacing: 0;
-  line-height: 20px;
 }
 
 #download {
