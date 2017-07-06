@@ -13,6 +13,9 @@ body {
   padding: 0;
   margin: 0;
   color: $text-dark-color;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .container {
@@ -24,6 +27,7 @@ header {
   width: 100%;
   height: 220px;
   background: $primary-color url('subway-lines.png') repeat;
+  flex: 0;
 
   .container {
     height: 220px;
@@ -53,8 +57,10 @@ header {
 }
 
 main {
+  flex: 1;
+
   #form-container {
-    background-color: $light-color;
+    background-color: rgba(255,255,255,.4);
     height: 70px;
     border-bottom: solid 1px #DECCC9;
   }
@@ -136,6 +142,70 @@ select {
   }
 }
 
+footer {
+  margin-top: 70px;
+  padding-bottom: 15px;
+  flex: 0;
+
+  .container {
+    position: relative;
+
+    img {
+      position: absolute;
+      top: -28px;
+    }
+
+    p {
+      text-align: right;
+      margin: 0;
+      padding-top: 10px;
+      color: #b3a69e;
+      text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.9);
+      font-family: 'Roboto';
+      font-size: 18px;
+
+      a {
+        display: inline-block;
+        text-decoration: none;
+        padding-bottom: 1px;
+        color: #b3a69e;
+        border-bottom: 1px dashed #b3a69e;
+
+        &:hover {
+          color: $primary-color;
+          border-bottom-color: $primary-color;
+        }
+      }
+    }
+
+    iframe {
+      position: absolute;
+      right: 0;
+      width: 90px;
+      top: 0;
+      transform: translate(15px, -150%);
+    }
+
+    &:before {
+      content: " ";
+      border-top: solid 1px #deccc9;
+      position: absolute;
+      width: 755px;
+      right: 0;
+      top: -1px;
+    }
+
+    &:after {
+      content: " ";
+      border-top: solid 1px rgba(255,255,255,.9);
+      position: absolute;
+      top: 1px;
+      right: 0;
+      width: 755px;
+    }
+  }
+}
+
 .d2h-file-wrapper {
   background: white;
 }
@@ -150,6 +220,10 @@ select {
 
   text-align: center;
   font-family: sans-serif;
+
+  .line-num2 {
+    width: 38px;
+  }
 }
 
 #download {
