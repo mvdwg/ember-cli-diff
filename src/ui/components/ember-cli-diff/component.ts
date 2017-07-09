@@ -13,6 +13,9 @@ export default class EmberCliDiff extends Component {
 
   json: any;
 
+  @tracked
+  downloadDiffUrl: any;
+
   constructor(options) {
     super(options);
 
@@ -59,8 +62,10 @@ export default class EmberCliDiff extends Component {
   }
 
   load(e) {
-    router.navigate(`/${this.from}/${this.to}`);
-    this.loadDiff();
+    if (this.from && this.to) {
+      router.navigate(`/${this.from}/${this.to}`);
+      this.loadDiff();
+    }
   }
 
   loadDiff() {
@@ -71,9 +76,11 @@ export default class EmberCliDiff extends Component {
       .then((text) => {
 
         if (text) {
+          this.downloadDiffUrl = `https://github.com/ember-cli/ember-new-output/compare/${this.from}...${this.to}.diff`;
           var diff2htmlUi = new Diff2HtmlUI({diff: text});
           diff2htmlUi.draw('#diff', {inputFormat: 'diff', showFiles: false, matching: 'lines'});
         } else {
+          this.downloadDiffUrl = null;
           $("#diff").html("No changes");
         }
       });
