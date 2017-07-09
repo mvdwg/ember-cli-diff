@@ -46,6 +46,7 @@ select {
   letter-spacing: 2px;
   line-height: 23px;
   font-size: 15px;
+  cursor: pointer;
 }
 
 #explain {
@@ -54,4 +55,19 @@ select {
   color: #505050;
   letter-spacing: 0;
   line-height: 20px;
+}
+
+#download {
+  background: #FF5334;
+  border-radius: 8px;
+  border: none;
+  font-family: sans-serif;
+  color: #FFFFFF;
+  letter-spacing: 2px;
+  line-height: 23px;
+  font-size: 15px;
+  box-sizing: border-box;
+  padding: 2px 6px 3px;
+  display: inline-block;
+  text-decoration: none;
 }
