@@ -11,11 +11,17 @@
 
 
       <button id="submit" onclick={{action load}}> See changes </button>
-      {{#if downloadDiffUrl}}
-        <a id="download" download href="{{downloadDiffUrl}}"> Download diff </a>
-      {{/if}}
     </form>
   </div>
 </div>
 
-<div id="diff"></div>
+<div class="container">
+  {{#if downloadDiffUrl}}
+    <p>
+      See the changes between <strong>{{from}}</strong> and <strong>{{to}}</strong> of Ember apps.
+      <br>
+      <a id="download" download href="{{downloadDiffUrl}}">Download diff</a>
+    </p>
+  {{/if}}
+  <div id="diff"></div>
+</div>
