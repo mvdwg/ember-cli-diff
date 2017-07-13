@@ -1,5 +1,6 @@
 import Component, { tracked } from '@glimmer/component';
 import Navigo from 'navigo';
+import { setItem, getItem } from '../../../utils/session-storage';
 
 declare const $, Diff2HtmlUI;
 
@@ -10,8 +11,6 @@ export default class EmberCliDiff extends Component {
   from: any;
   @tracked
   to: any;
-
-
   @tracked
   downloadDiffUrl: any;
 
@@ -51,19 +50,22 @@ export default class EmberCliDiff extends Component {
 
   loadTags() {
     return new Promise((resolve) => {
-      if (sessionStorage.getItem('tags')) {
-        resolve(JSON.parse(sessionStorage.getItem('tags')));
-      } else {
-        let tags = fetch(`https://api.github.com/repos/ember-cli/ember-new-output/tags?per_page=100`)
-        .then(request => request.json())
-        .then((tags) => {
-          let versionTags = tags.map((tag) => {
-            return tag.name;
-          });
+      var tags = getItem('tags');
 
-          sessionStorage.setItem('tags', JSON.stringify(versionTags));
-          resolve(versionTags);
-        });
+      if (tags) {
+        resolve(tags);
+      } else {
+        fetch(`https://api.github.com/repos/ember-cli/ember-new-output/tags?per_page=100`)
+          .then(request => request.json())
+          .then((tags) => {
+            let versionTags = tags.map((tag) => {
+              return tag.name;
+            });
+
+            setItem('tags', versionTags);
+
+            resolve(versionTags);
+          });
       }
     });
   }
@@ -72,8 +74,9 @@ export default class EmberCliDiff extends Component {
     this[key] = e.target.value;
 
     if (key === "from") {
-      this.loadTags((tags) => {
+      this.loadTags().then((tags) => {
         let greaterThanFromVersion = tags.slice(0, tags.indexOf(this.from));
+
         $("#to").empty().prepend('<option value="">').select2({
           data: this.createHashForSelect2(greaterThanFromVersion)
         })
