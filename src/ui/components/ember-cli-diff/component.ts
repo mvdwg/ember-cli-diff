@@ -39,8 +39,8 @@ export default class EmberCliDiff extends Component {
         data: this.createHashForSelect2(tags)
       });
 
-      $("#from").val(this.from).trigger("change")
-      $("#to").val(this.to).trigger("change")
+      $("#from").val(this.from).trigger("change");
+      $("#to").val(this.to).trigger("change");
 
       if (this.from && this.to) {
         this.loadDiff();
@@ -76,10 +76,11 @@ export default class EmberCliDiff extends Component {
     if (key === "from") {
       this.loadTags().then((tags) => {
         let greaterThanFromVersion = tags.slice(0, tags.indexOf(this.from));
-
         $("#to").empty().prepend('<option value="">').select2({
           data: this.createHashForSelect2(greaterThanFromVersion)
         })
+
+        $("#to").val(this.to).trigger("change");
       });
     }
   }
