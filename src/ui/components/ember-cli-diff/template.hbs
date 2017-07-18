@@ -15,15 +15,15 @@
 </div>
 
 <div class="container">
-  {{#if downloadDiffUrl}}
+  {{#if hasSelection}}
     <p>
       See the changes between <strong>{{from}}</strong> and <strong>{{to}}</strong> of Ember apps.
       <br>
       <a id="download" class="diff" download href="{{downloadDiffUrl}}">Download diff</a>
     </p>
+
+    <div id="diff"></div>
   {{else}}
     <zero-state />
   {{/if}}
-
-  <div id="diff"></div>
 </div>
