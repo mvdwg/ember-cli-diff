@@ -13,7 +13,9 @@ export default class EmberCliDiff extends Component {
   to: any;
   @tracked
   downloadDiffUrl: any;
+  @tracked
   hasSelection: boolean;
+
   json: any;
 
   constructor(options) {
