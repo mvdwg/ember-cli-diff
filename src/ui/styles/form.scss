@@ -33,7 +33,11 @@ form {
     border-radius: 2px;
     font-size: 19px;
     font-family: 'Roboto', sans-serif;
+    font-weight: 300;
     cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 
     &:hover {
       background-color: $primary-color;

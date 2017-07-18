@@ -3,6 +3,7 @@
 @import 'form';
 @import 'footer';
 @import 'select';
+@import 'zero-state';
 
 * {
   box-sizing: border-box;
@@ -11,6 +12,8 @@
 body {
   background: #faf4f1 url('b.svg') no-repeat;
   background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
   padding: 0;
   margin: 0;
   color: $text-dark-color;
@@ -22,7 +25,7 @@ body {
 .container {
   padding: 0 15px;
   margin: 0 auto;
-  widows: 100%;
+  width: 100%;
 }
 
 @media (min-width: 992px) {
@@ -35,7 +38,7 @@ main {
   flex: 1;
 
   p {
-    color: #b3a69e;
+    color: $text-normal;
     text-align: center;
     font-family: 'Roboto';
     margin-top: 20px;
@@ -43,12 +46,12 @@ main {
     line-height: 1.5;
     text-shadow: 2px 2px 1px rgba(255,255,255,.2);
 
-    a {
+    a.diff {
+      font-weight: 300;
       display: inline-block;
       color: $primary-color;
       font-size: 22px;
       text-transform: uppercase;
-      font-weight: bold;
       text-decoration: none;
       border-bottom: dashed 1px $primary-color;
       padding-bottom: 2px;

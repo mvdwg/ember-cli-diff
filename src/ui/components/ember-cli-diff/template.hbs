@@ -19,8 +19,11 @@
     <p>
       See the changes between <strong>{{from}}</strong> and <strong>{{to}}</strong> of Ember apps.
       <br>
-      <a id="download" download href="{{downloadDiffUrl}}">Download diff</a>
+      <a id="download" class="diff" download href="{{downloadDiffUrl}}">Download diff</a>
     </p>
+  {{else}}
+    <zero-state />
   {{/if}}
+
   <div id="diff"></div>
 </div>
