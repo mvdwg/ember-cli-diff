@@ -7,6 +7,24 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <link rel="apple-touch-icon" sizes="57x57" href="icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+    <link rel="manifest" href="icons/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="icons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -22,6 +40,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/diff2html/2.3.0/diff2html.min.js" integrity="sha256-mKHKp8FD7CitQVGdV8V9MHZAIss7XR5/0OVch/BjVZQ=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/diff2html/2.3.0/diff2html-ui.min.js" integrity="sha256-OrGLYrMJmpNSQzNeRnByAxVY3npgIT6Os98GW87iDrw=" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,500" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/diff2html/2.3.0/diff2html.min.css" integrity="sha256-HXXk7bgd2iz15UVkGyhtNXa9MRgnjYHdCwtQvLsE2Ck=" crossorigin="anonymous" />
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
@@ -32,9 +51,33 @@
     {{content-for "head-footer"}}
   </head>
   <body>
+    <header>
+      <div class="container">
+        <a href="/">
+          <img class="logo" src="logo.svg" alt="logo">
+        </a>
+        <p>
+          A simple tool to see differences between
+          <span class="new-line">new ember apps</span>
+        </p>
+        <img class="tomster" src="tomster.svg" alt="Tomster">
+      </div>
+    </header>
     {{content-for "body"}}
 
-    <div id="app"></div>
+    <main id="app"></main>
+
+    <footer>
+      <div class="container">
+        <img src="footer-logo.svg" alt="footer logo">
+        <p>
+          Project and site maintained by
+          <a href="https://www.mvdwg.org/" target="_blank" title="Montevideo Working Group">MVDWG</a>
+        </p>
+
+        <iframe class="project--stars" src="https://ghbtns.com/github-btn.html?user=mvdwg&repo=ember-cli-diff&type=star&count=true" frameborder="0" scrolling="0" height="20px"></iframe>
+      </div>
+    </footer>
     <script src="{{rootURL}}app.js"></script>
 
     {{content-for "body-footer"}}
